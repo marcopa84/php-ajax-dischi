@@ -21,13 +21,6 @@
 
   <main>
     <div class="wrapper">
-      <!-- <div class="cd">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg" alt="">
-        <h2>Title</h2>
-        <h3>Artista</h3>
-        <small>anno</small>
-      </div> -->
-
       <?php foreach ($database as $key => $cd) { ?>
         <div class="cd">
           <img src="<?php echo $cd['poster'] ?>" alt="">
