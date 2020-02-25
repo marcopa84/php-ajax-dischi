@@ -15,12 +15,30 @@
 <body>
   <header>
     <div class="wrapper">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <img src="partials/img/logo.png" alt="">
     </div>
   </header>
 
   <main>
+    <div class="wrapper">
+      <!-- <div class="cd">
+        <img src="https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg" alt="">
+        <h2>Title</h2>
+        <h3>Artista</h3>
+        <small>anno</small>
+      </div> -->
 
+      <?php foreach ($database as $key => $cd) { ?>
+        <div class="cd">
+          <img src="<?php echo $cd['poster'] ?>" alt="">
+          <h2><?php echo $cd['title'] ?></h2>
+          <h3><?php echo $cd['author'] ?></h3>
+          <small><?php echo $cd['year'] ?></small>
+        </div>
+      <?php } ?>
+
+
+    </div>
   </main>
 
   <footer>
