@@ -21,7 +21,7 @@
 
   <main>
     <div class="wrapper">
-      <?php foreach ($database as $key => $cd) { ?>
+      <?php foreach ($database as $cd) { ?>
         <div class="cd">
           <img src="<?php echo $cd['poster'] ?>" alt="">
           <h2><?php echo $cd['title'] ?></h2>
