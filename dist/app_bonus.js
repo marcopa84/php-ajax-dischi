@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -15806,10 +15806,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "./src/app.js":
-/*!********************!*\
-  !*** ./src/app.js ***!
-  \********************/
+/***/ "./src/app_bonus.js":
+/*!**************************!*\
+  !*** ./src/app_bonus.js ***!
+  \**************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15818,13 +15818,33 @@ var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
 
 $(document).ready(function () {
-  var source = $("#template").html();
-  var template = Handlebars.compile(source);
   $.ajax({
-    url: 'http://localhost/php-ajax-dischi/api/',
+    url: 'http://localhost/php-ajax-dischi/api/index_bonus.php',
+    method: 'GET',
+    success: function success(data) {
+      var source = $("#template_input").html();
+      var template = Handlebars.compile(source);
+      console.log(data);
+
+      for (var i = 0; i < data.length; i++) {
+        var context = {
+          value: data[i].author
+        };
+        var html = template(context);
+        $('header .author').append(html);
+      }
+    },
+    error: function error(richiesta, stato, _error) {
+      alert('è avvenuto un errore di collegamento per il caricamento degli artisti' + ' ' + _error);
+    }
+  });
+  $.ajax({
+    url: 'http://localhost/php-ajax-dischi/api/index_bonus.php',
     method: 'GET',
     success: function success(data) {
       console.log(data);
+      var source = $("#template").html();
+      var template = Handlebars.compile(source);
 
       for (var i = 0; i < data.length; i++) {
         var context = {
@@ -15837,46 +15857,24 @@ $(document).ready(function () {
         $('main .wrapper').append(html);
       }
     },
-    error: function error(richiesta, stato, _error) {
-      alert('è avvenuto un errore di collegamento' + ' ' + _error);
+    error: function error(richiesta, stato, _error2) {
+      alert('è avvenuto un errore di collegamento' + ' ' + _error2);
     }
   });
 });
 
-/***/ }),
-
-/***/ "./src/app.scss":
-/*!**********************!*\
-  !*** ./src/app.scss ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
+function authorSearch() {}
 
 /***/ }),
 
-/***/ "./src/app_bonus.scss":
-/*!****************************!*\
-  !*** ./src/app_bonus.scss ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!**************************************************************!*\
-  !*** multi ./src/app.js ./src/app.scss ./src/app_bonus.scss ***!
-  \**************************************************************/
+/***/ 1:
+/*!********************************!*\
+  !*** multi ./src/app_bonus.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\marco\Desktop\BOOLEAN\php\php-ajax-dischi\src\app.js */"./src/app.js");
-__webpack_require__(/*! C:\Users\marco\Desktop\BOOLEAN\php\php-ajax-dischi\src\app.scss */"./src/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\marco\Desktop\BOOLEAN\php\php-ajax-dischi\src\app_bonus.scss */"./src/app_bonus.scss");
+module.exports = __webpack_require__(/*! C:\Users\marco\Desktop\BOOLEAN\php\php-ajax-dischi\src\app_bonus.js */"./src/app_bonus.js");
 
 
 /***/ })
