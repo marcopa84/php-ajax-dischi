@@ -2,8 +2,26 @@ const $ = require('jquery');
 const Handlebars = require("handlebars");
 
 $(document).ready(function() {
+  var value = '';
+  // carico gli input dal database
+  makeInput();
+  // stampo tutto il database
+  printResult(value);
+
+  $('.author').change(function() {
+    var value = $(this).val();
+    console.log(value);
+    printResult(value);
+  });
 
 
+
+
+
+});
+
+
+function makeInput() {
   $.ajax({
     url:'http://localhost/php-ajax-dischi/api/index_bonus.php',
     method:'GET',
@@ -24,10 +42,12 @@ $(document).ready(function() {
       alert('è avvenuto un errore di collegamento per il caricamento degli artisti' + ' ' +error)
     }
   });
+}
 
-
+function printResult(value) {
+  $('main .wrapper').html('');
   $.ajax({
-    url:'http://localhost/php-ajax-dischi/api/index_bonus.php',
+    url:'http://localhost/php-ajax-dischi/api/index_bonus.php?author='+value,
     method:'GET',
     success: function (data) {
       console.log(data);
@@ -49,9 +69,7 @@ $(document).ready(function() {
       alert('è avvenuto un errore di collegamento' + ' ' +error)
     }
   });
-
-});
-
+}
 function authorSearch() {
 
 }
