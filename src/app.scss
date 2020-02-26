@@ -1,4 +1,4 @@
-@import "partials/variables.scss";
+@import "partials/_variables.scss";
 *{
   margin: 0;
   padding: 0;
@@ -26,7 +26,8 @@ main{
     align-items: flex-start;
     flex-wrap: wrap;
     .cd{
-      width: 20%;
+      // width: 20%;
+      width: calc(100% / 5);
       margin: 15px;
       background-color: black;
       color: white;
@@ -43,9 +44,11 @@ main{
       }
       h3{
         margin: 15px 0;
+        color: $secondary_font_color;
       }
       small{
         margin: 15px 0;
+        color: $secondary_font_color;
       }
     }
   }

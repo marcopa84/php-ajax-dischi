@@ -31,7 +31,7 @@ main .wrapper {
 }
 
 main .wrapper .cd {
-  width: 20%;
+  width: calc(100% / 5);
   margin: 15px;
   background-color: black;
   color: white;
@@ -52,9 +52,11 @@ main .wrapper .cd h2 {
 
 main .wrapper .cd h3 {
   margin: 15px 0;
+  color: grey;
 }
 
 main .wrapper .cd small {
   margin: 15px 0;
+  color: grey;
 }
 

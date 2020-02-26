@@ -1,3 +1,8 @@
+<?php
+  include __DIR__."/partials/server.php";
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,23 +21,22 @@
 
   <main>
     <div class="wrapper">
-      <!-- <?php foreach ($database as $cd) { ?>
+      <?php foreach ($database as $cd) { ?>
+        <div class="cd">
+          <img src="<?php echo $cd['poster'] ?>" alt="">
+          <h2><?php echo $cd['title'] ?></h2>
+          <h3><?php echo $cd['author'] ?></h3>
+          <small><?php echo $cd['year'] ?></small>
+        </div>
+      <?php } ?>
 
-      <?php } ?> -->
+
     </div>
   </main>
 
   <footer>
 
   </footer>
-  <script id="template" type="text/x-handlebars-template">
-    <div class="cd">
-      <img src="{{img_path}}" alt="">
-      <h2>{{cd_title}}</h2>
-      <h3>{{cd_author}}</h3>
-      <small>{{cd_year}}</small>
-    </div>
-  </script>
-  <script src="dist/app.js" charset="utf-8"></script>
+
 </body>
 </html>
