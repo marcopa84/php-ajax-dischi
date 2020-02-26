@@ -16,9 +16,7 @@
 
   <main>
     <div class="wrapper">
-      <!-- <?php foreach ($database as $cd) { ?>
 
-      <?php } ?> -->
     </div>
   </main>
 
