@@ -13,7 +13,7 @@
     $database_filtred = [];
     foreach ($database as $cd) {
       if ($cd['author'] == $author) {
-        $database_filtred = [$cd];
+        $database_filtred [] = $cd;
       }
     }
     if (empty($database_filtred)) {
